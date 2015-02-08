@@ -1,0 +1,86 @@
+/*#banner {
+  height: 32px;
+  width:100%;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+}
+#banner a {
+  color:white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#banner a:hover {
+  color: gold;
+}
+#banner table {
+  border: none;
+  color: white;
+  margin: 0px;
+}
+*/
+body {
+  margin: 0px; /* over ride YUI SAM */
+}
+#page {
+  margin:12px;
+  margin-top: 62px;
+}
+
+.note {
+  font-family: Sans-serif;
+  font-style: oblique;
+  color: #333333;
+  /*margin: 12px;
+  padding: 6px;*/
+  font-size: 67%;
+}
+
+.cmd {
+  padding-left:12px;
+  width:100%;
+  min-height: 200px;
+  visibility:hidden;
+  font-family: monospace;
+  font-size: 67%;
+  font-weight: normal;
+}
+.audit {
+  height:400px;
+  width:90%;
+  border:2px dotted blue;
+  font-family: verdana,monospace,sans-serif;
+  white-space: pre-wrap;
+  font-size: 67%;
+}
+.error {
+  border:2px dotted red;
+}
+
+.csv {
+  height:200px;
+  width:90%;
+  border:2px dotted blue;
+  font-size: 67%;
+  font-family: verdana,monospace,sans-serif;
+}
+
+.section {
+  border: 1px dashed gray;
+  margin: 12px;
+  padding: 12px;
+}
+.stack {
+  font-family: verdana,monospace,sans-serif;
+  white-space: pre-wrap;
+  padding: 12px;
+  margin: 6px;
+  font-size: 67%;
+  
+}
+.danger {
+  font-style: italic;
+}
+
+.stopflash { visibility: hidden; }

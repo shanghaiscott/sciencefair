@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.1" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="radPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>com.swdouglass.entity.Radiation</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/test?autoReconnect=true"/>
+      <property name="javax.persistence.jdbc.user" value="xxxxx"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="xxxxxx"/>
+      <!--property name="javax.persistence.lock.timeout" value="1000"/-->
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.format_sql" value="true"/>
+      <property name="hibernate.current_session_context_class" value="thread"/>
+      <!--property name="hibernate.transaction.factory_class" value="JDBCTransactionFactory"/-->
+      <property name="hibernate.c3p0.min_size" value="1"/>
+      <property name="hibernate.c3p0.max_size" value="5"/>
+      <property name="hibernate.c3p0.timeout" value="15"/>
+      <property name="hibernate.c3p0.max_statements" value="30"/>
+      <property name="hibernate.c3p0.idle_test_period" value="30"/>
+      <!-- batch insert related -->
+      <property name="hibernate.jdbc.batch_size" value="20"/>
+      <property name="hibernate.cache.use_second_level_cache" value="false"/>
+    </properties>
+  </persistence-unit>
+</persistence>

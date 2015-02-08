@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This web.xml file is not required when using Servlet 3.0 container,
+see implementation details http://jersey.java.net/nonav/documentation/latest/jax-rs.html -->
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>Jersey Web Application</servlet-name>
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+    <init-param>
+      <param-name>jersey.config.server.provider.packages</param-name>
+      <param-value>com.swdouglass</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <!-- YUI Combiner servlet -->
+  <servlet>
+    <servlet-name>yuicombo</servlet-name>
+    <servlet-class>com.swdouglass.servlet.ComboServlet</servlet-class>
+  </servlet>
+  <!-- end YUI combiner -->
+  <!-- Logout Servlet -->
+  <servlet>
+    <servlet-name>logout</servlet-name>
+    <servlet-class>com.swdouglass.servlet.LogoutServlet</servlet-class>
+  </servlet>
+  <!-- end Logout Servlet -->
+  <!-- servlet URL mapping -->
+  <servlet-mapping>
+    <servlet-name>yuicombo</servlet-name>
+    <url-pattern>/yuicombo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>logout</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Jersey Web Application</servlet-name>
+    <url-pattern>/webapi/*</url-pattern>
+  </servlet-mapping>
+  <!-- Error Pages -->
+  <!--
+  <error-page>
+    <error-code>401</error-code>
+    <location>/WEB-INF/jsp/401.jsp</location>
+  </error-page>
+  -->
+  <error-page>
+    <error-code>403</error-code>
+    <location>/403.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404.jsp</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/500.jsp</location>
+  </error-page>
+  <!-- end Error Pages -->
+  <!-- start JNDI Resource References -->
+  <resource-ref>
+    <description>RAD database</description>
+    <res-ref-name>jdbc/swdouglass</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  <!-- end JNDI Resource References -->
+</web-app>
